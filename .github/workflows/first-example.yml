@@ -11,14 +11,13 @@ jobs:
         uses: actions/checkout@v5
 
       - name: List and Read files
-        run: |
+        run: 
           echo "My first Github action job"
           ls -lstr
           cat src/main/java/com/gomo/SpringBoot/with/GitHub/actions/HelloWorld.java
 
-      - name: Generate ASCII Artwork
-        run: cowsay -f dragon "Run for cover , I am a DRAGON...RAWR" >> dragon.txt 
-
+      # - name: Generate ASCII Artwork
+      #   run: cowsay -f dragon "Run for cover , I am a DRAGON...RAWR" >> dragon.txt
         
 
       # - name: List files
