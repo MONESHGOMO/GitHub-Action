@@ -13,9 +13,11 @@ jobs:
               run: ls -lstr
 
             - name: executing shell script
-              run:
-                chmod +x 
+              run: |
+                chmod +x script.sh
                 .github/workflows/script.sh
+
+
 
 
         
