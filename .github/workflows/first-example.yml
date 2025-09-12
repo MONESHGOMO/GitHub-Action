@@ -1,0 +1,17 @@
+name: my first workflow
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome Message
+        run: echo "My first Github action job"
+
+      - name: List files
+        run: ls
+
+      - name: Read HelloWorld.java
+        run: cat src/main/java/com/gomo/SpringBoot/with/GitHub/actions/HelloWorld.java
+
