@@ -31,14 +31,12 @@ jobs:
         run: echo "✅ This is the second job, running after ascii_job"
 
   third_job:
-    needs: second_job
+    needs: second_job   # runs after second_job
     runs-on: ubuntu-latest
     steps:
-      - name: third job  message
-        run: echo "⚡"
+      - name: Third job message
+        run: echo "⚡ Third job executed after second_job"
 
-
-# the ./. indicates to run the script otherwise we see the console as ( command not found ) if we use just ./ it seems kike saying the directory 
-
-
-# parallel execution is the default behaviour in github action 
+# Note:
+# - './' ensures running from repo path, avoids "command not found"
+# - Parallel execution is the default in GitHub Actions unless 'needs:' is used
