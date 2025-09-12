@@ -11,9 +11,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List repo files
-        run: ls -lstr
+        run: |
+          ls -lstr
+          ls -a
 
       - name: Executing shell script
         run: |
           chmod +x .github/workflows/script.sh
-          ./.github/workflows/script.sh
+          ./.github/workflows/script.sh   
+
+        
+
+# the ./. indicates to run the script otherwise we see the console as ( command not found ) if we use just ./ it seems kike saying the directory 
+
