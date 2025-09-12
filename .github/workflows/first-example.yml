@@ -10,12 +10,20 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v5
 
-      - name: Welcome Message
-        run: echo "My first Github action job"
+      - name: List and Read files
+        run: |
+          echo "My first Github action job"
+          ls -lstr
+          cat src/main/java/com/gomo/SpringBoot/with/GitHub/actions/HelloWorld.java
 
-      - name: List files
-        run: ls
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "Run for cover , I am a DRAGON...RAWR" >> dragon.txt 
 
-      - name: Read HelloWorld.java
-        run: cat src/main/java/com/gomo/SpringBoot/with/GitHub/actions/HelloWorld.java
+        
+
+      # - name: List files
+      #   run: ls
+
+      # - name: Read HelloWorld.java
+      #   run: cat src/main/java/com/gomo/SpringBoot/with/GitHub/actions/HelloWorld.java
 
