@@ -18,9 +18,27 @@ jobs:
       - name: Executing shell script
         run: |
           chmod +x .github/workflows/script.sh
-          ./.github/workflows/script.sh   
+          ./.github/workflows/script.sh
+          
+      - name: Sleep
+        run: sleep 10
 
-        
+  second_job:
+    needs: ascii_job   # ensures this runs *after* ascii_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "✅ This is the second job, running after ascii_job"
+
+  third_job:
+    needs: second_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: third job  message
+        run: echo "⚡"
+
 
 # the ./. indicates to run the script otherwise we see the console as ( command not found ) if we use just ./ it seems kike saying the directory 
 
+
+# parallel execution is the default behaviour in github action 
