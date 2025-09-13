@@ -1,0 +1,13 @@
+name: my first workflow
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: List and Read files
+        run: |
+          echo "My first Github action job"
+          ls -lstr
+          cat src/main/java/com/gomo/SpringBoot/with/GitHub/actions/HelloWorld.java
