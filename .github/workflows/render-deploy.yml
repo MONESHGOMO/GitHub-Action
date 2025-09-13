@@ -16,6 +16,6 @@ jobs:
       - name: Run deploy script
         run: |
           chmod +x deploy.sh
-          deploy.sh
+          . deploy.sh
         env:
           RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
