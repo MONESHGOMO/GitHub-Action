@@ -22,7 +22,7 @@ jobs:
         run: cowsay -f dragon "Run for cover , I am a DRAGON...RAWR" >> dragon.txt
 
       - name: Upload Dragon file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dragon-text-file
           path: dragon.txt
@@ -38,7 +38,9 @@ jobs:
           name: dragon-text-file
           path: dragon.txt
       - name: Print message
-        run: echo "✅ This is the second job, running after ascii_job"
+        run: |
+          cat dragon.txt
+          echo "✅ This is the second job, running after ascii_job"
 
   third_job:
     needs: second_job   # runs after second_job
