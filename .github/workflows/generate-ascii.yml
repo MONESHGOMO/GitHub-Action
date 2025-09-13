@@ -3,6 +3,7 @@ name: Generate ASCII Artwork
 on:
   push:
 
+
 jobs:
   ascii_job:
     runs-on: ubuntu-latest
@@ -25,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dragon-text-file
-          path: dragon.txt
+          path: dragon.txt   # upload the file, not a non-existent folder
 
 
   second_job:
@@ -36,11 +37,13 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: dragon-text-file
-          path: dragon.txt
+          path: .   # download into current directory
+
       - name: Print message
         run: |
           cat dragon.txt
           echo "✅ This is the second job, running after ascii_job"
+
 
   third_job:
     needs: second_job   # runs after second_job
@@ -50,7 +53,7 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: dragon-text-file
-          path: dragon.txt
+          path: .
 
       - name: Third job message
         run: |
