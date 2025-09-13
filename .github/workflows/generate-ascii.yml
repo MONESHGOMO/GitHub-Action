@@ -15,18 +15,28 @@ jobs:
           ls -lstr
           ls -a
 
-      - name: Executing shell script
-        run: |
-          chmod +x .github/workflows/script.sh
-          ./.github/workflows/script.sh
-          
-      - name: Sleep
-        run: sleep 10
+      - name: Install Cowsay Program 
+        run: sudo apt-get install cowsay -y
+
+      - name: Execute Cowsay MCD
+        run: cowsay -f dragon "Run for cover , I am a DRAGON...RAWR" >> dragon.txt
+
+      - name: Upload Dragon file
+        uses: actions/upload-artifact@v3
+        with:
+          name: dragon-text-file
+          path: dragon.txt
+
 
   second_job:
     needs: ascii_job   # ensures this runs *after* ascii_job
     runs-on: ubuntu-latest
     steps:
+      - name: Download Dragon file
+        uses: actions/download-artifact@v5
+        with:
+          name: dragon-text-file
+          path: dragon.txt
       - name: Print message
         run: echo "✅ This is the second job, running after ascii_job"
 
@@ -34,8 +44,17 @@ jobs:
     needs: second_job   # runs after second_job
     runs-on: ubuntu-latest
     steps:
+      - name: Download Dragon file
+        uses: actions/download-artifact@v5
+        with:
+          name: dragon-text-file
+          path: dragon.txt
+
       - name: Third job message
-        run: echo "⚡ Third job executed after second_job"
+        run: |
+          cat dragon.txt
+          echo "⚡ Third job executed after second_job"
+
 
 # Note:
 # - './' ensures running from repo path, avoids "command not found"
