@@ -9,6 +9,6 @@ public class HelloWorld {
     @GetMapping("/check")
     public String hello()
     {
-        return "running  check again ";
+        return "CI CD done ";
     }
 }
