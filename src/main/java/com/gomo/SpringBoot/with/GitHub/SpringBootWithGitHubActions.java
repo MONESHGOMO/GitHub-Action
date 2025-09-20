@@ -1,4 +1,4 @@
-package com.gomo.SpringBoot.with.GitHub.actions;
+package com.gomo.SpringBoot.with.GitHub;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,0 +1,219 @@
+package com.gomo.SpringBoot.with.GitHub.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+@Controller
+@RequestMapping("/")
+public class HomeController {
+
+
+    @GetMapping
+    @ResponseBody
+    public String getHome() {
+        return
+        """
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                    <head>
+                        <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/githubactions.svg"
+                            type="image/svg+xml">
+                        <title>Dev16 CI/CD</title>
+
+
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+                            body {
+                                font-family: 'Poppins', sans-serif;
+                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                min-height: 100vh;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 20px;
+                            }
+
+                            .notification-card {
+                                background: rgba(255, 255, 255, 0.95);
+                                border-radius: 20px;
+                                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                                padding: 40px;
+                                max-width: 800px;
+                                width: 100%;
+                                text-align: center;
+                                backdrop-filter: blur(10px);
+                                border: 1px solid rgba(255, 255, 255, 0.3);
+                                transform: translateY(0);
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            }
+
+                            .notification-card:hover {
+                                transform: translateY(-5px);
+                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                            }
+
+                            .status-badge {
+                                display: inline-flex;
+                                align-items: center;
+                                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                                color: white;
+                                padding: 10px 25px;
+                                border-radius: 50px;
+                                font-weight: 600;
+                                margin-bottom: 25px;
+                                box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+                            }
+
+                            .ci-icon {
+                                font-size: 24px;
+                                margin-right: 10px;
+                            }
+
+                            h2 {
+                                color: #333;
+                                font-weight: 700;
+                                margin-bottom: 20px;
+                            }
+
+                            .description {
+                                color: #666;
+                                font-size: 18px;
+                                line-height: 1.6;
+                                margin-bottom: 30px;
+                            }
+
+                            .tech-badges {
+                                display: flex;
+                                justify-content: center;
+                                gap: 15px;
+                                margin-bottom: 30px;
+                                flex-wrap: wrap;
+                            }
+
+                            .tech-badge {
+                                background: #f8f9fa;
+                                padding: 8px 20px;
+                                border-radius: 50px;
+                                font-weight: 500;
+                                color: #555;
+                                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+                                border: 1px solid #eee;
+                            }
+
+                            .links {
+                                display: flex;
+                                justify-content: center;
+                                gap: 20px;
+                                margin-top: 30px;
+                            }
+
+                            .btn {
+                                padding: 12px 30px;
+                                border-radius: 50px;
+                                font-weight: 600;
+                                text-decoration: none;
+                                display: inline-flex;
+                                align-items: center;
+                                transition: all 0.3s ease;
+                            }
+
+                            .btn-blog {
+                                background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+                                color: white;
+                            }
+
+                            .btn-github {
+                                background: #333;
+                                color: white;
+                            }
+
+                            .btn i {
+                                margin-right: 8px;
+                            }
+
+                            .btn:hover {
+                                transform: translateY(-2px);
+                                box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+                            }
+
+                            .pulse {
+                                animation: pulse 2s infinite;
+                            }
+
+                            @keyframes pulse {
+                                0% {
+                                    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.7);
+                                }
+
+                                70% {
+                                    box-shadow: 0 0 0 10px rgba(79, 172, 254, 0);
+                                }
+
+                                100% {
+                                    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0);
+                                }
+                            }
+                        </style>
+                    </head>
+
+                <body>
+                    <div class="notification-card">
+                        <div class="status-badge pulse">
+                            <i class="ci-icon fas fa-check-circle"></i>
+                            CI/CD Successfully Implemented!
+                        </div>
+
+                        <h2>Continuous Deployment with Render</h2>
+
+                        <p class="description">
+                            Our CI/CD pipeline is now fully operational! Continuous Integration is handled through GitHub Actions,
+                            while Continuous Deployment is seamlessly implemented using Render's powerful platform for automated
+                            deployments.
+                        </p>
+
+                        <div class="tech-badges">
+                            <span class="tech-badge"><i class="fas fa-code-branch"></i> GitHub Actions</span>
+                            <span class="tech-badge"><i class="fas fa-rocket"></i> Render</span>
+                            <span class="tech-badge"><i class="fas fa-shield-alt"></i> Automated Testing</span>
+                            <span class="tech-badge"><i class="fas fa-sync-alt"></i> Zero Downtime Deploys</span>
+                        </div>
+
+                        <div class="dev-info">
+                            <p>Developed by <strong>Dev16</strong> | CI/CD </p>
+                        </div>
+
+                        <div class="links">
+                            <a href="https://dev16-blog.web.app" class="btn btn-blog"><i class="fas fa-blog"></i> Visit Blog</a>
+                            <a href="https://github.com/moneshgomo" class="btn btn-github"><i class="fab fa-github"></i> GitHub
+                                Profile</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        // Add a subtle hover effect to the card
+                        document.querySelector('.notification-card').addEventListener('mouseenter', function () {
+                            this.classList.remove('pulse');
+                        });
+
+                        document.querySelector('.notification-card').addEventListener('mouseleave', function () {
+                            this.classList.add('pulse');
+                        });
+                    </script>
+                </body>
+
+                </html>
+                """;
+    }
+
+}
