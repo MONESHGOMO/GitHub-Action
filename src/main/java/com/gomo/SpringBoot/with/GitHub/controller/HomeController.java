@@ -25,7 +25,7 @@ public class HomeController {
                     <meta name="author" content="Dev16">
 
                     <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/githubactions.svg" type="image/svg+xml">
-                    <title>Automated CI/CD Pipeline | Dev16</title>
+                    <title>Dev16 CI/CD</title>
 
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
