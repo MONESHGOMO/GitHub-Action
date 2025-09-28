@@ -13,7 +13,7 @@ This project demonstrates a **CI/CD workflow** for a Java Spring Boot applicatio
 ## Features
 
 - **Continuous Integration (CI)**
-  - Runs **unit tests** using Maven.
+  
   - Builds the Spring Boot application.
   - Generates a Docker image for deployment.
 
