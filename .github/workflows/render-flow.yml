@@ -1,8 +1,9 @@
 name: Deploy to Render
 
 on:
-  schedule:
-    - cron: '*/1 * * * *'
+  workflow_dispatch # Manual trigger from Actions tab
+  # schedule:
+  #   - cron: '*/1 * * * *'
   #push:
     #branches: [ main ]
  
