@@ -27,6 +27,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     needs: test
+    concurrency:
+      group: 'build-and-deploy'
+      cancel-in-progress: true
+      
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     
     steps:
