@@ -1,5 +1,10 @@
 # Dev16 CI/CD Project
 
+
+<br>
+
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/73b9ef07-30b6-4c1d-b951-e6f1d7078b1c" />
+
 ## Overview
 This project demonstrates a **CI/CD workflow** for a Java Spring Boot application using **GitHub Actions**, **Docker**, and deployment on **Render** free tier. The workflow automates **building, testing, Docker image creation, and deployment** to a cloud service.
 
@@ -8,7 +13,7 @@ This project demonstrates a **CI/CD workflow** for a Java Spring Boot applicatio
 ## Features
 
 - **Continuous Integration (CI)**
-  - Runs **unit tests** using Maven.
+  
   - Builds the Spring Boot application.
   - Generates a Docker image for deployment.
 
