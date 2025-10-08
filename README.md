@@ -19,7 +19,7 @@ This project demonstrates a **CI/CD workflow** for a Java Spring Boot applicatio
 
 - **Continuous Deployment (CD)**
   - Pushes Docker images to **Docker Hub**.
-  - Integrates with **Render** for automatic deployment.
+  - Integrates with **Render** with  one click  deployment.
   - Supports **auto-deploy** whenever the main branch is updated.
 
 - **Technologies**
